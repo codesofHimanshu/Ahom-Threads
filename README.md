@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# 🧵 AHOM THREADS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Ahom Threads** is a cultural fashion brand website dedicated to the **revival, promotion, and modern representation of Tai-Ahom heritage** through clothing, traditional wear, and handcrafted accessories.
 
-## Available Scripts
+This project combines **modern web technology** with **cultural storytelling**, aiming to keep Tai-Ahom identity alive in everyday fashion.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌿 Brand Vision
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> *"Culture survives when it is worn, not stored."*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ahom Threads bridges the past and the present by reinterpreting Tai-Ahom motifs, textiles, and craftsmanship into modern silhouettes and wearable designs.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌐 Live Website
 
-### `npm run build`
+🔗 **Live URL:**
+[https://ahom-threads.vercel.app](https://ahom-threads.vercel.app)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛍️ Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* 🧥 Cultural fashion storefront (traditional + modern wear)
+* 🧵 Tai-Ahom inspired product designs
+* 🛒 Cart system (frontend)
+* 🎨 Premium UI with Tailwind CSS
+* 📖 Cultural storytelling sections (Mission, Initiatives, Stories)
+* 🌍 Fully responsive (mobile + desktop)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧠 Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Frontend:** React (Create React App)
+* **Styling:** Tailwind CSS
+* **Hosting:** Vercel
+* **Version Control:** Git & GitHub
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Project Structure
 
-## Learn More
+```
+ahom-threads/
+├── public/
+│   ├── Faa_su_F.jpeg
+│   ├── Faa_su_M.jpeg
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── package.json
+└── README.md
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Running Locally
 
-### Code Splitting
+### 1️⃣ Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/codesofHimanshu/Ahom-Threads.git
+cd Ahom-Threads
+```
 
-### Analyzing the Bundle Size
+### 2️⃣ Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+### 3️⃣ Start development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+The site will open at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+http://localhost:3000
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌱 Future Enhancements
 
-### `npm run build` fails to minify
+* Razorpay payment gateway
+* Order management & backend
+* Blog / cultural archive
+* Multi-language support (Assamese / English)
+* SEO optimization
+* Custom domain integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🤝 Contribution & Collaboration
+
+This project welcomes:
+
+* Cultural researchers
+* Designers
+* Developers
+* Artisans & storytellers
+
+Feel free to fork the repo or reach out for collaboration.
+
+---
+
+## 📜 License
+
+This project is for **educational and cultural promotion purposes**.
+Commercial usage of designs or cultural symbols should respect Tai-Ahom heritage and local artisan communities.
+
+---
+
+## 🙏 Acknowledgement
+
+Inspired by the **Tai-Ahom civilization of Assam** and the artisans who continue to keep the culture alive.
+
+---
+
+**AHOM THREADS**
+*Weaving Tai-Ahom Heritage*
+
