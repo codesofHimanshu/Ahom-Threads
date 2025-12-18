@@ -1,56 +1,58 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-const PRODUCTS = [
-  {
-    id: 'faa_su_f',
-    name: 'Faa_su_F',
-    price: 2499,
-    image: '/Faa_su_F.jpeg',
-    description:
-      'Faa_su_F is a modern reinterpretation of traditional Tai-Ahom attire, handcrafted with cultural knot detailing and heritage-inspired design.'
-  },
-  {
-    id: 'faa_su_m',
-    name: 'Faa_su_M',
-    price: 2899,
-    image: '/Faa_su_M.jpeg',
-    description:
-      'Faa_su_M blends Ahom royal aesthetics with contemporary tailoring, symbolising strength, identity, and tradition.'
-  }
-];
-
-export default function ProductDetail() {
+export default function ProductDetail({ products, onAdd }) {
   const { id } = useParams();
-  const product = PRODUCTS.find(p => p.id === id);
+  const product = products.find(p => p.id === Number(id));
 
-  if (!product) return <h2>Product not found</h2>;
+  if (!product) {
+    return <div className="p-10 text-center">Product not found</div>;
+  }
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
-      <div className="grid md:grid-cols-2 gap-8">
-        <img src={product.image} alt={product.name} className="rounded-lg" />
+    <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        {/* IMAGE */}
+        <img
+          src={product.img}
+          alt={product.title}
+          className="w-full rounded-lg shadow"
+        />
 
+        {/* DETAILS */}
         <div>
-          <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-xl mt-2 font-semibold">₹{product.price}</p>
+          <h1 className="text-3xl font-bold">{product.title}</h1>
+          <p className="mt-3 text-gray-600">{product.desc}</p>
 
-          <div className="mt-4">
-            <p className="text-gray-700">{product.description}</p>
+          <div className="mt-4 text-2xl font-semibold">
+            ₹{product.price}
           </div>
 
+          <p className="mt-1 text-sm text-gray-500">
+            Taxes included. Shipping calculated at checkout.
+          </p>
+
+          {/* SIZE (LIKE CULTEES) */}
           <div className="mt-6">
-            <p className="font-medium mb-2">Size</p>
+            <h3 className="font-semibold mb-2">Size</h3>
             <div className="flex gap-2">
-              {['S', 'M', 'L', 'XL', '2XL'].map(size => (
-                <button key={size} className="px-4 py-2 border rounded">
+              {["S", "M", "L", "XL", "2XL"].map(size => (
+                <button
+                  key={size}
+                  className="border px-4 py-2 rounded hover:border-black"
+                >
                   {size}
                 </button>
               ))}
             </div>
           </div>
 
-          <button className="mt-6 w-full bg-yellow-600 text-white py-3 rounded">
-            Buy Now
+          {/* BUY BUTTON */}
+          <button
+            onClick={() => onAdd(product)}
+            className="mt-6 w-full bg-black text-white py-3 rounded-lg font-semibold"
+          >
+            Add to Cart
           </button>
         </div>
       </div>
