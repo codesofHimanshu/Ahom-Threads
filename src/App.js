@@ -7,15 +7,15 @@ import React, { useState } from 'react';
 const PRODUCTS = [
   {
     id: 1,
-    title: 'Tai-Ahom Knot Top (Female)',
+    title: 'Faa_su_F',
     price: 2499,
     img: '/Faa_su_F.jpeg',
     desc: 'Short-sleeve Tai-Ahom inspired top with traditional knot-button design, handcrafted details, and comfortable fit.'
   },
   {
     id: 2,
-    title: 'Tai-Ahom Knot Shirt (Male)',
-    price: 2899,
+    title: 'Faa_su_M',
+    price: 2499,
     img: '/Faa_su_M.jpeg',
     desc: 'Classic Tai-Ahom inspired shirt featuring full-length knot buttons, clean lines, and cultural detailing.'
   },
@@ -34,6 +34,7 @@ const PRODUCTS = [
     desc: 'Decorative Japi-inspired headpiece. Great for photoshoots and festivals.'
   }
 ];
+
 
 function Header({ onOpenCart, cartCount }) {
   return (
