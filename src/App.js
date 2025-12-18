@@ -1,3 +1,6 @@
+import { Routes, Route, Link } from "react-router-dom";
+import ProductDetail from "./pages/ProductDetail";
+
 import React, { useState } from 'react';
 
 // Single-file React + Tailwind component
@@ -41,12 +44,16 @@ function Header({ onOpenCart, cartCount }) {
     <header className="bg-white shadow-sm sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center font-semibold text-white">AH</div>
-          <div>
-            <h1 className="text-lg font-bold tracking-wide">AHOM THREADS</h1>
-            <p className="text-xs text-gray-500">Weaving Tai-Ahom Heritage</p>
-          </div>
-        </div>
+        <img
+          src="/ahom-threads-logo.png"
+          alt="Ahom Threads Logo"
+          className="w-12 h-12 object-contain"
+        /><div>
+        <h1 className="text-lg font-bold tracking-wide">AHOM THREADS</h1>
+        <p className="text-xs text-gray-500">Weaving Tai-Ahom Heritage</p>
+         </div>
+      </div>
+
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <a href="#home" className="hover:text-yellow-600">Home</a>
@@ -129,8 +136,11 @@ function Shop({ onAdd }) {
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {PRODUCTS.map(p => (
-          <ProductCard key={p.id} product={p} onAdd={onAdd} />
-        ))}
+        <Link key={p.id} to={`/product/${p.id}`} className="block">
+            <ProductCard product={p} onAdd={onAdd} />
+        </Link>
+))}
+
       </div>
     </section>
   );
@@ -318,13 +328,37 @@ export default function App() {
     <div className="min-h-screen bg-white text-gray-900">
       <Header onOpenCart={() => setCartOpen(true)} cartCount={cart.length} />
       <main>
-        <Hero />
-        <Shop onAdd={handleAdd} />
-        <About onOpenModal={() => setModalOpen(true)} />
-        <Initiatives />
-        <Stories />
-        <Contact />
-      </main>
+  <Routes>
+
+    {/* HOME PAGE */}
+    <Route
+      path="/"
+      element={
+        <>
+          <Hero />
+          <Shop onAdd={handleAdd} />
+          <About onOpenModal={() => setModalOpen(true)} />
+          <Initiatives />
+          <Stories />
+          <Contact />
+        </>
+      }
+    />
+
+    {/* PRODUCT DETAIL PAGE */}
+    <Route
+      path="/product/:id"
+      element={
+        <ProductDetail
+          products={PRODUCTS}
+          onAdd={handleAdd}
+        />
+      }
+    />
+
+  </Routes>
+</main>
+
 
       <footer className="bg-gray-900 text-white mt-10">
   <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between">
