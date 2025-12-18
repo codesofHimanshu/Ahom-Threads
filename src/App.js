@@ -21,10 +21,10 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    title: 'Charaideo Dress',
-    price: 3299,
-    img: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=60',
-    desc: 'Modern silhouette with woven Pat-inspired paneling.'
+    title: 'Thong',
+    price: 500,
+    img: '/Thong.jpeg',
+    desc: 'The Tai Thong is a traditional handwoven bag symbolizing Tai-Ahom identity and craftsmanship.'
   },
   {
     id: 4,
