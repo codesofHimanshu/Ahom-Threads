@@ -10,36 +10,41 @@ export default function ProductDetail({ products, onAdd }) {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        
-        {/* IMAGE */}
-        <img
-          src={product.img}
-          alt={product.title}
-          className="w-full rounded-lg shadow"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-        {/* DETAILS */}
+        {/* LEFT: IMAGE */}
+        <div>
+          <img
+            src={product.img}
+            alt={product.title}
+            className="w-full rounded-xl shadow-md"
+          />
+        </div>
+
+        {/* RIGHT: DETAILS */}
         <div>
           <h1 className="text-3xl font-bold">{product.title}</h1>
-          <p className="mt-3 text-gray-600">{product.desc}</p>
+
+          <div className="flex items-center gap-2 mt-2 text-sm text-green-600">
+            ● In stock
+          </div>
 
           <div className="mt-4 text-2xl font-semibold">
             ₹{product.price}
           </div>
 
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="text-sm text-gray-500">
             Taxes included. Shipping calculated at checkout.
           </p>
 
-          {/* SIZE (LIKE CULTEES) */}
+          {/* SIZE */}
           <div className="mt-6">
             <h3 className="font-semibold mb-2">Size</h3>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               {["S", "M", "L", "XL", "2XL"].map(size => (
                 <button
                   key={size}
-                  className="border px-4 py-2 rounded hover:border-black"
+                  className="border px-4 py-2 rounded-md hover:border-black"
                 >
                   {size}
                 </button>
@@ -47,15 +52,45 @@ export default function ProductDetail({ products, onAdd }) {
             </div>
           </div>
 
-          {/* BUY BUTTON */}
-          <button
-            onClick={() => onAdd(product)}
-            className="mt-6 w-full bg-black text-white py-3 rounded-lg font-semibold"
-          >
-            Add to Cart
-          </button>
+          {/* BUTTONS */}
+          <div className="mt-6 space-y-3">
+            <button
+              onClick={() => onAdd(product)}
+              className="w-full bg-black text-white py-3 rounded-lg font-semibold"
+            >
+              Add to Cart
+            </button>
+
+            <button
+              className="w-full border border-black py-3 rounded-lg font-semibold"
+            >
+              Buy Now
+            </button>
+          </div>
+
+          {/* ICON FEATURES */}
+          <div className="mt-8 grid grid-cols-3 text-center gap-4 text-sm">
+            <div>
+              <div className="font-semibold">100% Cotton</div>
+            </div>
+            <div>
+              <div className="font-semibold">COD Available</div>
+            </div>
+            <div>
+              <div className="font-semibold">Fast Delivery</div>
+            </div>
+          </div>
+
+          {/* DESCRIPTION */}
+          <div className="mt-8">
+            <h3 className="font-semibold mb-2">Description</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {product.desc}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
