@@ -1,7 +1,11 @@
 import { useParams } from "react-router-dom";
+console.log(
+  "Razorpay ENV KEY 👉",
+  process.env.REACT_APP_RAZORPAY_KEY_ID
+);
 function handleBuyNow(product) {
   const options = {
-    key: process.env.REACT_APP_RAZORPAY_KEY, // 👈 your Razorpay Key ID
+    key: process.env.REACT_APP_RAZORPAY_KEY_ID, // 👈 your Razorpay Key ID
     amount: product.price * 100, // Razorpay uses paise
     currency: "INR",
     name: "Ahom Threads",

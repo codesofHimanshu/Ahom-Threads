@@ -25,7 +25,7 @@ const PRODUCTS = [
   {
     id: 3,
     title: 'Thong',
-    price: 500,
+    price: 5,
     img: '/Thong.jpeg',
     desc: 'The Tai Thong is a traditional handwoven bag symbolizing Tai-Ahom identity and craftsmanship.'
   },
