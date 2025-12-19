@@ -1,4 +1,29 @@
 import { useParams } from "react-router-dom";
+function handleBuyNow(product) {
+  const options = {
+    key: process.env.REACT_APP_RAZORPAY_KEY, // 👈 your Razorpay Key ID
+    amount: product.price * 100, // Razorpay uses paise
+    currency: "INR",
+    name: "Ahom Threads",
+    description: product.title,
+    image: "/ahom-threads-logo.png",
+    handler: function (response) {
+      alert("Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
+    },
+    prefill: {
+      name: "",
+      email: "",
+      contact: "",
+    },
+    theme: {
+      color: "#111827",
+    },
+  };
+
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+}
+
 
 export default function ProductDetail({ products, onAdd }) {
   const { id } = useParams();
@@ -62,10 +87,12 @@ export default function ProductDetail({ products, onAdd }) {
             </button>
 
             <button
+              onClick={() => handleBuyNow(product)}
               className="w-full border border-black py-3 rounded-lg font-semibold"
-            >
+              >
               Buy Now
             </button>
+
           </div>
 
           {/* ICON FEATURES */}
