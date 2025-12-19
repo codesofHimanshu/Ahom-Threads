@@ -28,6 +28,24 @@ function handleBuyNow(product) {
   rzp.open();
 }
 
+function handleCOD(product) {
+  const confirmOrder = window.confirm(
+    `Confirm COD Order?\n\nProduct: ${product.title}\nPrice: ₹${product.price}`
+  );
+
+  if (confirmOrder) {
+    alert(
+      "✅ Order placed successfully!\n\nPayment Mode: Cash on Delivery\nOur team will contact you soon."
+    );
+
+    // 👉 Later you can:
+    // - Save order to backend
+    // - Send WhatsApp message
+    // - Send email
+  }
+}
+
+
 
 export default function ProductDetail({ products, onAdd }) {
   const { id } = useParams();
@@ -90,12 +108,24 @@ export default function ProductDetail({ products, onAdd }) {
               Add to Cart
             </button>
 
-            <button
-              onClick={() => handleBuyNow(product)}
-              className="w-full border border-black py-3 rounded-lg font-semibold"
-              >
-              Buy Now
-            </button>
+            <div className="flex gap-4 mt-6">
+            {/* ONLINE PAYMENT */}
+          <button
+            onClick={() => handleBuyNow(product)}
+            className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800"
+          >
+          Pay Online
+          </button>
+
+            {/* COD */}
+          <button
+            onClick={() => handleCOD(product)}
+            className="border border-black px-6 py-3 rounded hover:bg-gray-100"
+          >
+          Cash on Delivery
+          </button>
+          </div>
+
 
           </div>
 
